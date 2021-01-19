@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/csurf": "^1.11.0",
@@ -29,14 +30,15 @@
   },
   "dependencies": {
     "@ory/hydra-client": "^1.9.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "node-json-db": "^1.1.0",
     "prettier": "^2.2.1",
     "pug": "^3.0.0",
-    "simple-json-db": "^1.2.2",
     "url-join": "^4.0.1"
   }
 }
