@@ -25,6 +25,11 @@ router.get("/", csrfProtection, (req, res, next) => {
           .acceptConsentRequest(challenge, {
             grant_scope: body.requested_scope,
             grant_access_token_audience: body.requested_access_token_audience,
+            session: {
+              id_token: {
+                email: body.subject,
+              },
+            },
           })
           .then(({ data: body }) => {
             res.redirect(String(body.redirect_to));
@@ -68,6 +73,11 @@ router.post("/", csrfProtection, (req, res, next) => {
         .acceptConsentRequest(challenge, {
           grant_scope: grantScope,
           grant_access_token_audience: body.requested_access_token_audience,
+          session: {
+            id_token: {
+              email: body.subject,
+            },
+          },
           remember: Boolean(req.body.remember),
           remember_for: 3600,
         })
